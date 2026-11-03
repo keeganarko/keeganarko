@@ -10,7 +10,7 @@ flowchart LR
     A["Claude Code · Codex CLI · Grok · Muse Code · Antigravity"]
   end
   subgraph Control["Local Control Plane"]
-    B["Workspace & Agent OS<br/>82 MCP tools · 9,200+ tests"]
+    B["Agent Hub<br/>82 MCP tools · 9,200+ tests"]
     C["Browser (Chromium / Electron)<br/>5 risk tiers · 0-token DOM watcher"]
   end
   subgraph Verify["Verification & Interpretability"]
