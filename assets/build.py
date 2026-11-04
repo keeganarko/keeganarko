@@ -54,7 +54,7 @@ def hero(t):
     w, h = 1000, 300
     body = panel(w, h, t)
     body += (f'<text x="56" y="122" font-size="46" font-weight="700" letter-spacing="-1" fill="{t["text"]}">Keegan Choudhury</text>'
-             f'<text x="58" y="164" font-size="21" font-weight="600" fill="{t["blue"]}">Co-founder of Relay</text>'
+             f'<text x="58" y="164" font-size="21" font-weight="600" fill="{t["blue"]}">Co-founder of Relay · Arlington, Virginia</text>'
              f'<text x="58" y="210" font-size="18" fill="{t["muted"]}">I build tools that help people and their AI agents</text>'
              f'<text x="58" y="236" font-size="18" fill="{t["muted"]}">work on the same thing without stepping on each other.</text>')
     hub_x, hub_y, ax = 800, 152, 640
@@ -77,7 +77,7 @@ def hero(t):
               f'<text x="{hub_x}" y="282" font-size="13" text-anchor="middle" fill="{t["muted"]}">one shared picture</text>'
               f'<text x="{hub_x + 145}" y="282" font-size="13" text-anchor="middle" fill="{t["muted"]}">people</text>')
     return svg(w, h, body + paths + moving + nodes + hub + labels,
-               'Keegan Choudhury, co-founder of Relay. Agents feed one shared picture that people stay in charge of.')
+               'Keegan Choudhury, co-founder of Relay in Arlington, Virginia. Agents feed one shared picture that people stay in charge of.')
 
 
 def relay(t):
