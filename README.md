@@ -15,7 +15,7 @@ flowchart LR
   end
   subgraph Verify["Verification & Interpretability"]
     D["receipt-checker & compaction-guard<br/>Clean-tree rerun · SHA-256 hash chain"]
-    E["model-lab (Qwen3-1.7B E["Lab (Qwen3-1.7B & 9B) 9B)<br/>65k SAEs · Jacobian & J-space lenses"]
+    E["model-lab (Qwen3-1.7B & 9B)<br/>65k SAEs · Jacobian & J-space lenses"]
   end
   A --> B
   B <-->|"Paired local link"| C
