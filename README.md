@@ -3,6 +3,11 @@
   <img src="assets/hero-light.svg" width="100%" alt="Keegan Choudhury, co-founder of Relay in Arlington, Virginia. I build tools that help people and their AI agents work on the same thing without stepping on each other.">
 </picture>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg">
+  <img src="assets/activity-light.svg" width="100%" alt="What I've been building: 6,619 commits since May 2026, about half naming an AI agent as co-author, rising sharply from September. Dots mark when keegan.ai, Dreamcatcher, Browser, Relay, Model Lab, compaction-guard, receipt-checker and Agent Hub started.">
+</picture>
+
 ## Hi, I'm Keegan
 
 I'm co-founding [Relay](https://www.relayaiworld.com) from Arlington, Virginia. Relay keeps software teams and their AI coding agents in sync. When your agent and a teammate's agent start changing the same code, it tells you both before anything merges.
@@ -10,6 +15,8 @@ I'm co-founding [Relay](https://www.relayaiworld.com) from Arlington, Virginia. 
 It started as my own problem. I work with five coding agents every day (Claude, Codex, Gemini, Grok and Muse), and getting them to write code was never the hard part. The hard part was keeping them pointed at the same goal, stopping them from writing over each other and over me, and knowing when "done" really meant done. I kept building tools to fix that, and Relay is where they all led. I wrote about what I learned in [Agents need direction](https://www.keegan.ai/writing/agents-need-direction.html).
 
 Before Relay I was a product manager at Microsoft, working on AI, and then at Capital One.
+
+What I'm learning right now: how to look inside small open models, and how to make agents prove their work instead of just claiming it.
 
 [keegan.ai](https://www.keegan.ai) · [Relay](https://www.relayaiworld.com) · [LinkedIn](https://www.linkedin.com/in/keeganchou) · [Résumé](https://www.keegan.ai/assets/Keegan-Choudhury-Resume.pdf)
 

@@ -163,8 +163,80 @@ ICONS = {
 }
 
 
+# Activity: weekly commits from activity.json (refresh with collect_activity.py), with a dot
+# for the week each project started. Start dates are each repo's first commit on GitHub.
+STARTS = [('2026-05-24', 'keegan.ai'), ('2026-08-23', 'Dreamcatcher'), ('2026-09-04', 'Browser'),
+          ('2026-09-13', 'Relay'), ('2026-09-23', 'Model Lab and compaction-guard'),
+          ('2026-10-15', 'receipt-checker'), ('2026-10-23', 'Agent Hub')]
+MONTHS = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split()
+
+
+def activity(t):
+    import datetime as dt
+    import json
+    data = json.loads((OUT / 'activity.json').read_text())
+    weeks = {dt.date.fromisoformat(k): v for k, v in data['weeks'].items()}
+    first, last = min(weeks), max(weeks)
+    n = (last - first).days // 7 + 1
+    w, h, x0, x1, base, tall = 1000, 400, 40, 960, 268, 140
+    slot = (x1 - x0) / n
+    peak = max(weeks.values())
+    x_of = lambda d: x0 + (d - first).days / 7 * slot
+    body = panel(w, h, t, stripe=False)
+    agent_share = round(100 * data['commits_naming_an_agent'] / data['commits'])
+    share = 'About half' if 45 <= agent_share <= 55 else f'{agent_share}% of them'
+    body += (f'<text x="{x0}" y="52" font-size="22" font-weight="600" fill="{t["text"]}">What I&#8217;ve been building</text>'
+             f'<text x="{x0}" y="80" font-size="15" fill="{t["muted"]}">{data["commits"]:,} commits since {MONTHS[first.month - 1]}. '
+             f'{share} name an AI agent as co-author.</text>'
+             f'<text x="{x0}" y="102" font-size="13" fill="{t["muted"]}">Each bar is one week. Each dot is the week a project started.</text>')
+    for i in range(n):
+        v = weeks.get(first + dt.timedelta(days=7 * i), 0)
+        if not v:
+            continue
+        bh = max(3, tall * v / peak)
+        bw = slot - 8
+        bx, top = x0 + i * slot + 4, base - bh
+        r = min(4, bh / 2, bw / 2)
+        body += (f'<path d="M{bx:.1f} {base} V{top + r:.1f} Q{bx:.1f} {top:.1f} {bx + r:.1f} {top:.1f} H{bx + bw - r:.1f} '
+                 f'Q{bx + bw:.1f} {top:.1f} {bx + bw:.1f} {top + r:.1f} V{base} Z" fill="{t["blue"]}"/>')
+        if v == peak:
+            week = first + dt.timedelta(days=7 * i)
+            label = f'{v:,} in the week of {MONTHS[week.month - 1]} {week.day}'
+            body += f'<text x="{min(bx + bw / 2, x1 - 4):.1f}" y="{top - 9:.1f}" font-size="13" fill="{t["text"]}" text-anchor="end">{label}</text>'
+    body += f'<line x1="{x0}" y1="{base}" x2="{x1}" y2="{base}" stroke="{t["line"]}" stroke-width="1.5"/>'
+    m = dt.date(first.year, first.month, 1)
+    while m <= last:
+        x = max(x0, x_of(m))
+        body += f'<text x="{x:.1f}" y="{base + 20}" font-size="12" fill="{t["muted"]}">{MONTHS[m.month - 1]}</text>'
+        m = dt.date(m.year + (m.month == 12), m.month % 12 + 1, 1)
+    line_y, rows = base + 44, [base + 70, base + 92, base + 114]
+    body += f'<line x1="{x0}" y1="{line_y}" x2="{x1}" y2="{line_y}" stroke="{t["line"]}" stroke-width="1.5"/>'
+    # Place labels from the right: each takes the highest row where its text overlaps no
+    # other text, covers no leader running further down, and its own leader crosses no text.
+    placed = []  # (row, x, left, right)
+    for day, name in reversed(STARTS):
+        x = x_of(dt.date.fromisoformat(day))
+        width = 7.1 * len(name) + 8
+        left, right = (x + 4 - width, x + 4) if x - 4 + width > x1 else (x - 4, x - 4 + width)
+        for row in range(len(rows)):
+            if all(not (p[0] == row and left < p[3] + 10 and p[2] - 10 < right) and
+                   not (p[0] > row and left - 6 < p[1] < right + 6) and
+                   not (p[0] < row and p[2] - 6 < x < p[3] + 6) for p in placed):
+                break
+        placed.append((row, x, left, right))
+        y = rows[row]
+        end = right == x + 4
+        body += (f'<line x1="{x:.1f}" y1="{line_y}" x2="{x:.1f}" y2="{y - 13}" stroke="{t["line"]}" stroke-width="1.5"/>'
+                 f'<circle cx="{x:.1f}" cy="{line_y}" r="6" fill="{t["gold"]}" stroke="{t["bg"]}" stroke-width="2.5"/>'
+                 f'<text x="{x + 4 if end else x - 4:.1f}" y="{y}" font-size="13" fill="{t["text"]}"'
+                 f'{" text-anchor=\"end\"" if end else ""}>{name}</text>')
+    title = (f'{data["commits"]:,} commits since {MONTHS[first.month - 1]} {first.year}, rising sharply from September; '
+             'projects started along the way: ' + ', '.join(f'{n} ({MONTHS[int(d[5:7]) - 1]})' for d, n in STARTS) + '.')
+    return svg(w, h, body, title)
+
+
 def main():
-    for name, draw in (('hero', hero), ('relay', relay), ('journey', journey)):
+    for name, draw in (('hero', hero), ('activity', activity), ('relay', relay), ('journey', journey)):
         for theme, t in THEMES.items():
             (OUT / f'{name}-{theme}.svg').write_text(draw(t))
     (OUT / 'icons').mkdir(exist_ok=True)
