@@ -1,60 +1,69 @@
-# Keegan Choudhury
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
+  <img src="assets/hero-light.svg" width="100%" alt="Keegan Choudhury, co-founder of Relay in New York. I build tools that help people and their AI agents work on the same thing without stepping on each other.">
+</picture>
 
-AI product manager and systems builder in Washington, DC (open to SF Bay Area). I build multi-agent runtimes, agent browsers, and local mechanistic interpretability tools.
+## Hi, I'm Keegan
 
-**[keegan.ai](https://www.keegan.ai)** · **[Paper (KDD '25 Workshop)](https://arxiv.org/abs/2508.11715)** · **[US Patent App. US20250378320A1](https://patents.google.com/patent/US20250378320A1/en)** · **[Writing](https://www.keegan.ai/writing/agents-need-direction.html)** · **[LinkedIn](https://www.linkedin.com/in/keeganchou)**
+I'm co-founding [Relay](https://www.relayaiworld.com) in New York. Relay keeps software teams and their AI coding agents in sync. When your agent and a teammate's agent start changing the same code, it tells you both before anything merges.
 
-```mermaid
-flowchart LR
-  subgraph Agents["5 Coding Agent Providers"]
-    A["Claude Code · Codex CLI · Grok · Muse Code · Antigravity"]
-  end
-  subgraph Control["Local Control Plane"]
-    B["Agent Hub<br/>82 MCP tools · 9,200+ tests"]
-    C["Browser (Chromium / Electron)<br/>5 risk tiers · 0-token DOM watcher"]
-  end
-  subgraph Verify["Verification & Interpretability"]
-    D["receipt-checker & compaction-guard<br/>Clean-tree rerun · SHA-256 hash chain"]
-    E["model-lab (Qwen3-1.7B & 9B)<br/>65k SAEs · Jacobian & J-space lenses"]
-  end
-  A --> B
-  B <-->|"Paired local link"| C
-  B --> D
-  B -.->|"Replay & sensor evals"| E
-```
+It started as my own problem. I work with five coding agents every day (Claude, Codex, Gemini, Grok and Muse), and getting them to write code was never the hard part. The hard part was keeping them pointed at the same goal, stopping them from writing over each other and over me, and knowing when "done" really meant done. I kept building tools to fix that, and Relay is where they all led. I wrote about what I learned in [Agents need direction](https://www.keegan.ai/writing/agents-need-direction.html).
 
----
+Before Relay I was a product manager at Microsoft, working on AI, and then at Capital One.
 
-### Systems I've Built
+[keegan.ai](https://www.keegan.ai) · [Relay](https://www.relayaiworld.com) · [LinkedIn](https://www.linkedin.com/in/keeganchou) · [Résumé](https://www.keegan.ai/assets/Keegan-Choudhury-Resume.pdf)
 
-| System | Stack | Scale & Verification | Technical Mechanism |
-| :--- | :--- | :--- | :--- |
-| **[Workspace](https://www.keegan.ai/workspace/)** & **Agent OS** | TypeScript, Node 24, `node-pty` (1 runtime dep) | **3,215 commits** · **8,738** Workspace tests + **188** Agent OS test files | Orchestrates 5 AI providers over 1 shared MCP server (**82 tools**). 10-state append-only goal log, 8-state input-safe delivery (never overwrites an unsent human draft), and SHA-256 hash-chained audit logs. |
-| **[Browser](https://www.keegan.ai/browser/)** | Chromium / Electron 44, TypeScript | **860 tests** across 92 files · **56** privacy checks | Agents act only in user-picked tabs. Classifies every action into 5 risk tiers before execution (money, deletion, credentials require single-use human approval). Local DOM watcher runs every 15s with **0 model calls / 0 tokens**. |
-| **[model-lab](https://github.com/keeganarko/model-lab)** | Python, PyTorch, `Qwen3-1.7B` & `Qwen3.5-9B` | **284 unit tests** (CPU-only, no GPU/net) · `FSL-1.1-MIT` | Streams a 1 GiB **65,536-feature** sparse autoencoder in 128 MiB slices from RAM so a 19.3 GB 9B model fits in **7.3 GB VRAM**. Implements Jacobian lenses (within `3.4e-5` of Anthropic's reference across 27 layers), J-space decomposition, causal residual-stream branching (`Rome − Paris` flips output at `0.1× \|h\|` at layer 24 vs. `0/336` random pushes), and a duty-cycle GPU scheduler. |
-| **[receipt-checker](https://github.com/keeganarko/receipt-checker)** | Node.js, Git object store, Bash (`FSL-1.1-MIT`) | **154 tests** (Ubuntu & macOS, Node 20/22/24) · **0 deps** | Verifies an agent's "done" receipt by exporting the exact 40-char commit from git's object store into an empty folder (bypassing `git archive` so `export-ignore` cannot hide a failing test), rerunning checks in `env -i`, and logging verdicts in a SHA-256 hash chain. |
-| **[compaction-guard](https://github.com/keeganarko/compaction-guard)** | Node.js Claude Code `PreCompact` hook (`FSL-1.1-MIT`) | **31 tests** · **1 file** · **0 deps** · live-tested in Claude Code | Built after measuring that **393 of 441** agent save requests across 203 rounds were pre-empted by active user typing. Streams a transcript copy, verifies SHA-256 readback, writes a receipt, and blocks compaction on failure. |
-| **Trading Engine** & **Observatory** | Python stdlib, SQLite, IBKR read-only feed | **152 commits** · **43** unit + **76** Playwright GUI checks | 17 annual expanding-window fits (**4,197** outcomes) with `AsOf` causal lookup guards verified by future-label perturbation tests. Daily listed-option quote replay pricing bid/ask spread crossing (`~1.5` pts/trade, `~0.65%` annual CAGR drag on `QQQ`) + byte-pinned `HALT` controls. |
-| **[Dreamcatcher](https://www.keegan.ai/dreamcatcher/)** | TypeScript, React, evaluation harness | **150 tests** · **99%** line coverage | Links AI claims to captured source passages, recorded reviews, and challenge gates that withhold evidence scores while an objection is open. |
+<br>
 
----
+<a href="https://www.relayaiworld.com/demo.html">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/relay-dark.svg">
+    <img src="assets/relay-light.svg" width="100%" alt="Relay keeps software teams and their AI agents in sync. When two agents head for the same code, Relay warns both people before the merge. Try the interactive demo.">
+  </picture>
+</a>
+<br><br>
 
-### Research & Patents
+Relay sits beside the tools teams already use, like Claude Code, Cursor and Codex. It notices when two people's agents are about to collide, checks changes in a sandbox before they land, and only shares context with people who are cleared to see all of it.
 
-- **[Benchmark Dataset Generation and Evaluation for Excel Formula Repair with LLMs (FoRepBench)](https://arxiv.org/abs/2508.11715)** — *KDD 2025 Workshop on Evaluation and Trustworthiness of Agentic and Generative AI Models*. Co-author (1 of 13 at Microsoft; scenarios, evaluation criteria, writing). Across **618** benchmark examples generated from **59** user-forum seeds and scored by live spreadsheet execution + LLM judge:
-  ```text
-  GPT-4.1   ████████████████  80% synthetic (618)   ████████  41% forum seeds (59)
-  GPT-4o    ███████████████   73% synthetic (618)   ███████   35% forum seeds (59)
-  Phi-3     ████████████      58% synthetic (618)   █████     24% forum seeds (59)
-  Mistral   ██████████        51% synthetic (618)   ████      19% forum seeds (59)
-  ```
-- **[Generative agent guided conversations for artifact completion](https://patents.google.com/patent/US20250378320A1/en)** — *US Patent Application `US20250378320A1`* (filed June 2024, published Dec 2025, assigned to Microsoft Technology Licensing LLC). Co-inventor (1 of 9). An AI agent interviews a user across turns to populate a structured artifact while code validates each `update_artifact` call against the form's schema.
+## Things I've built along the way
 
----
+### <img src="assets/icons/agent-hub.svg" width="30" height="30" align="top" alt=""> Agent Hub
 
-### Experience & Education
+My home base. Five coding agents work on one project, share notes and tools, and hand work to each other. A change only counts as done once its checks pass again from a clean copy, and if I'm in the middle of typing, the agents wait. My draft always wins. Written in TypeScript on Node, with a shared MCP server every agent plugs into. [See how it works](https://www.keegan.ai/workspace/)
 
-- **Capital One** · Product Manager *(2025–present)* — Delayed go-live 2 weeks after shadow testing caught old-vs-new response mismatches, then migrated the **Venture X** card portfolio to a platform serving **4.3M requests/month** with **0 customer-facing outages**. Leading 13-engineer Collections & Recoveries monitoring across SMS, email, mobile, and web.
-- **Microsoft** · Product Manager *(2023–2025)* — Helped shape and ship **Excel Formula Repair** in the Copilot pane and grid right-click menu for Excel for the web. Led a 5-person team building a daily-use internal **LLM support assistant** with graph retrieval (**~95%** of hand-graded test cases solved without an engineer; **$1.07M** modeled annual productivity value).
-- **Tesla** · Technical Program Manager Intern *(2022)* — Automated vehicle-door part validation using SQL and Postman, raising manufacturing line throughput **~23%**.
-- **Texas A&M University** — B.S. Computer Science, **Summa Cum Laude** (**3.94 GPA**, 2023).
+### <img src="assets/icons/model-lab.svg" width="30" height="30" align="top" alt=""> Model Lab
+
+How I look inside small open models on my own GPU. It reads a model one layer at a time with lenses and sparse autoencoders, and can nudge a layer while the model is thinking to test cause and effect against random controls. It streams the big feature dictionaries in small slices, so a 9B model fits on an ordinary graphics card. I kept the negative results in too. Python and PyTorch, on Qwen models. [Read the code](https://github.com/keeganarko/model-lab)
+
+### <img src="assets/icons/receipt-checker.svg" width="30" height="30" align="top" alt=""> receipt-checker
+
+Agents kept telling me tests passed when they hadn't. This tool ignores the claim. It rebuilds the exact commit in an empty folder, runs the checks again, and writes down what really happened in a log that shows any later edits. Plain Node.js, nothing else to install. [Read the code](https://github.com/keeganarko/receipt-checker)
+
+### <img src="assets/icons/compaction-guard.svg" width="30" height="30" align="top" alt=""> compaction-guard
+
+A small Claude Code hook. Before a long conversation gets compacted, it saves the whole transcript, checks the copy matches, and stops the compaction if it doesn't, so nothing important quietly disappears. [Read the code](https://github.com/keeganarko/compaction-guard)
+
+### <img src="assets/icons/earlier.svg" width="30" height="30" align="top" alt=""> Earlier experiments
+
+- [**Browser**](https://www.keegan.ai/browser/), a browser built for agents where they only touch the tabs you hand them, and anything involving money, deleting things or passwords waits for your OK.
+- [**Dreamcatcher**](https://www.keegan.ai/dreamcatcher/), an early try at arguing with an AI answer. Every claim links back to its source, and scores wait while an objection is still open.
+- **An options replay harness** that keeps me honest about cause and effect. It replays real option quotes without peeking at the future.
+
+## Where I've been
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/journey-dark.svg">
+  <img src="assets/journey-light.svg" width="100%" alt="From Texas A&M to Tesla, Microsoft and Capital One, and now co-founding Relay in New York.">
+</picture>
+
+I studied computer science at Texas A&M and interned at AT&T, Microsoft (on HoloLens) and Tesla. Then I spent two years as a product manager at Microsoft working on AI: I helped ship Formula Repair in Excel, led a small team building a support assistant that engineers used every day, and worked on agents that guide people through a conversation. At Capital One I led moving the Venture X card portfolio onto a new platform without customers noticing. Now all of that goes into Relay.
+
+## Research
+
+**[FoRepBench](https://arxiv.org/abs/2508.11715)**, KDD 2025 workshop. With my Microsoft colleagues I built a benchmark for how well language models repair broken Excel formulas, scoring each fix by actually running it. The lesson that stuck with me: models that look great on generated test cases do about half as well on the messy problems real people post in forums.
+
+**[Generative agent guided conversations for artifact completion](https://patents.google.com/patent/US20250378320A1/en)**, a US patent application with Microsoft, where I'm one of the inventors. An agent interviews you to fill in a document, while plain code checks every field before anything is saved.
+
+## Say hi
+
+If your team runs coding agents and they keep colliding, I'd love to hear about it. The best way to reach me is through [keegan.ai](https://www.keegan.ai) or [LinkedIn](https://www.linkedin.com/in/keeganchou).
