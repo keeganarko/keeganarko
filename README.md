@@ -30,7 +30,7 @@ What I'm learning right now: how to look inside small open models, and how to ma
 </a>
 <br><br>
 
-Relay sits beside the tools teams already use, like Claude Code, Cursor and Codex. It notices when two people's agents are about to collide, checks changes in a sandbox before they land, and only shares context with people who are cleared to see all of it.
+Relay sits beside the tools teams already use, like Claude Code and Codex. It notices when two people's agents are about to collide, checks changes before they land, and only shares context with people who are cleared to see all of it.
 
 ## Things I've built along the way
 
