@@ -18,7 +18,7 @@ I'm also a product manager at Capital One, and before that I worked on AI produc
 
 What I'm learning right now: how to look inside small open models, and how to make agents prove their work instead of just claiming it.
 
-[keegan.ai](https://www.keegan.ai) · [Relay](https://www.relayaiworld.com) · [LinkedIn](https://www.linkedin.com/in/keeganchou) · [Résumé](https://www.keegan.ai/assets/Keegan-Choudhury-Resume.pdf)
+[keegan.ai](https://www.keegan.ai) · [Relay](https://www.relayaiworld.com) · [LinkedIn](https://www.linkedin.com/in/keeganarko) · [Résumé](https://www.keegan.ai/assets/Keegan-Choudhury-Resume.pdf)
 
 <br>
 
@@ -73,4 +73,4 @@ I studied computer science at Texas A&M and interned at AT&T, Microsoft (on Holo
 
 ## Say hi
 
-If your team runs coding agents and they keep colliding, I'd love to hear about it. The best way to reach me is through [keegan.ai](https://www.keegan.ai) or [LinkedIn](https://www.linkedin.com/in/keeganchou).
+If your team runs coding agents and they keep colliding, I'd love to hear about it. The best way to reach me is through [keegan.ai](https://www.keegan.ai) or [LinkedIn](https://www.linkedin.com/in/keeganarko).
