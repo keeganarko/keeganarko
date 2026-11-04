@@ -25,7 +25,7 @@ What I'm learning right now: how to look inside small open models, and how to ma
 <a href="https://www.relayaiworld.com/demo.html">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/relay-dark.svg">
-    <img src="assets/relay-light.svg" width="100%" alt="Relay keeps software teams and their AI agents in sync. When two agents head for the same code, Relay warns both people before the merge. Try the interactive demo.">
+    <img src="assets/relay-light.svg" width="100%" alt="Relay keeps software teams and their AI agents in sync. When two agents head for the same code, Relay warns both people before the merge. Watch the 30-second film.">
   </picture>
 </a>
 <br><br>
