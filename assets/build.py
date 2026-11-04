@@ -54,7 +54,7 @@ def hero(t):
     w, h = 1000, 300
     body = panel(w, h, t)
     body += (f'<text x="56" y="122" font-size="46" font-weight="700" letter-spacing="-1" fill="{t["text"]}">Keegan Choudhury</text>'
-             f'<text x="58" y="164" font-size="21" font-weight="600" fill="{t["blue"]}">Co-founder of Relay · New York</text>'
+             f'<text x="58" y="164" font-size="21" font-weight="600" fill="{t["blue"]}">Co-founder of Relay</text>'
              f'<text x="58" y="210" font-size="18" fill="{t["muted"]}">I build tools that help people and their AI agents</text>'
              f'<text x="58" y="236" font-size="18" fill="{t["muted"]}">work on the same thing without stepping on each other.</text>')
     hub_x, hub_y, ax = 800, 152, 640
@@ -77,7 +77,7 @@ def hero(t):
               f'<text x="{hub_x}" y="282" font-size="13" text-anchor="middle" fill="{t["muted"]}">one shared picture</text>'
               f'<text x="{hub_x + 145}" y="282" font-size="13" text-anchor="middle" fill="{t["muted"]}">people</text>')
     return svg(w, h, body + paths + moving + nodes + hub + labels,
-               'Keegan Choudhury, co-founder of Relay in New York. Agents feed one shared picture that people stay in charge of.')
+               'Keegan Choudhury, co-founder of Relay. Agents feed one shared picture that people stay in charge of.')
 
 
 def relay(t):
@@ -113,7 +113,7 @@ STOPS = [
     ('Tesla', '#C8102E', 'Automated part checks', 'on the assembly line'),
     ('Microsoft', '#0067B8', 'AI products, a paper', 'and a patent'),
     ('Capital One', '#004977', 'Moved a card portfolio', 'with no customer outages'),
-    ('Relay', BLUE, 'Co-founder,', 'New York'),
+    ('Relay', BLUE, 'Co-founder,', 'building it now'),
 ]
 
 
@@ -134,7 +134,7 @@ def journey(t):
         if i:
             body += f'<path d="M{x - 112} 56 l8 6 l-8 6" fill="none" stroke="{t["muted"]}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
     body += f'<text x="900" y="24" font-size="12" font-weight="600" letter-spacing="1.4" text-anchor="middle" fill="{t["muted"]}">NOW</text>'
-    return svg(w, h, body, 'From Texas A&amp;M to Tesla, Microsoft and Capital One, and now co-founding Relay in New York.')
+    return svg(w, h, body, 'From Texas A&amp;M to Tesla, Microsoft and Capital One, and now co-founding Relay.')
 
 
 def tile(colour, glyph, title):

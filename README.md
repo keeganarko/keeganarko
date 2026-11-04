@@ -1,11 +1,11 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-  <img src="assets/hero-light.svg" width="100%" alt="Keegan Choudhury, co-founder of Relay in New York. I build tools that help people and their AI agents work on the same thing without stepping on each other.">
+  <img src="assets/hero-light.svg" width="100%" alt="Keegan Choudhury, co-founder of Relay. I build tools that help people and their AI agents work on the same thing without stepping on each other.">
 </picture>
 
 ## Hi, I'm Keegan
 
-I'm co-founding [Relay](https://www.relayaiworld.com) in New York. Relay keeps software teams and their AI coding agents in sync. When your agent and a teammate's agent start changing the same code, it tells you both before anything merges.
+I'm co-founding [Relay](https://www.relayaiworld.com). Relay keeps software teams and their AI coding agents in sync. When your agent and a teammate's agent start changing the same code, it tells you both before anything merges.
 
 It started as my own problem. I work with five coding agents every day (Claude, Codex, Gemini, Grok and Muse), and getting them to write code was never the hard part. The hard part was keeping them pointed at the same goal, stopping them from writing over each other and over me, and knowing when "done" really meant done. I kept building tools to fix that, and Relay is where they all led. I wrote about what I learned in [Agents need direction](https://www.keegan.ai/writing/agents-need-direction.html).
 
@@ -53,7 +53,7 @@ A small Claude Code hook. Before a long conversation gets compacted, it saves th
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/journey-dark.svg">
-  <img src="assets/journey-light.svg" width="100%" alt="From Texas A&M to Tesla, Microsoft and Capital One, and now co-founding Relay in New York.">
+  <img src="assets/journey-light.svg" width="100%" alt="From Texas A&M to Tesla, Microsoft and Capital One, and now co-founding Relay.">
 </picture>
 
 I studied computer science at Texas A&M and interned at AT&T, Microsoft (on HoloLens) and Tesla. Then I spent two years as a product manager at Microsoft working on AI: I helped ship Formula Repair in Excel, led a small team building a support assistant that engineers used every day, and worked on agents that guide people through a conversation. At Capital One I led moving the Venture X card portfolio onto a new platform without customers noticing. Now all of that goes into Relay.
