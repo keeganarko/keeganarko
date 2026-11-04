@@ -8,6 +8,11 @@
   <img src="assets/activity-light.svg" width="100%" alt="What I've been building: 6,619 commits since May 2026, about half naming an AI agent as co-author, rising sharply from September. Dots mark when keegan.ai, Dreamcatcher, Browser, Relay, Model Lab, compaction-guard, receipt-checker and Agent Hub started.">
 </picture>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/contributions-dark.svg">
+  <img src="assets/contributions-light.svg" width="100%" alt="GitHub contribution graph for the last year: 9,939 contributions, most days active.">
+</picture>
+
 ## Hi, I'm Keegan
 
 I'm co-founding [Relay](https://www.relayaiworld.com) from Arlington, Virginia. Relay keeps software teams and their AI coding agents in sync. When your agent and a teammate's agent start changing the same code, it tells you both before anything merges.
