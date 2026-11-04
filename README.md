@@ -14,7 +14,7 @@ I'm co-founding [Relay](https://www.relayaiworld.com) from Arlington, Virginia. 
 
 It started as my own problem. I work with five coding agents every day (Claude, Codex, Gemini, Grok and Muse), and getting them to write code was never the hard part. The hard part was keeping them pointed at the same goal, stopping them from writing over each other and over me, and knowing when "done" really meant done. I kept building tools to fix that, and Relay is where they all led. I wrote about what I learned in [Agents need direction](https://www.keegan.ai/writing/agents-need-direction.html).
 
-Before Relay I was a product manager at Microsoft, working on AI, and then at Capital One.
+I'm also a product manager at Capital One, and before that I worked on AI products at Microsoft.
 
 What I'm learning right now: how to look inside small open models, and how to make agents prove their work instead of just claiming it.
 
@@ -60,10 +60,10 @@ A small Claude Code hook. Before a long conversation gets compacted, it saves th
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/journey-dark.svg">
-  <img src="assets/journey-light.svg" width="100%" alt="From Texas A&M to Tesla, Microsoft and Capital One, and now co-founding Relay.">
+  <img src="assets/journey-light.svg" width="100%" alt="From Texas A&M to Tesla and Microsoft. Now a product manager at Capital One and co-founding Relay.">
 </picture>
 
-I studied computer science at Texas A&M and interned at AT&T, Microsoft (on HoloLens) and Tesla. Then I spent two years as a product manager at Microsoft working on AI: I helped ship Formula Repair in Excel, led a small team building a support assistant that engineers used every day, and worked on agents that guide people through a conversation. At Capital One I led moving the Venture X card portfolio onto a new platform without customers noticing. Now all of that goes into Relay.
+I studied computer science at Texas A&M and interned at AT&T, Microsoft (on HoloLens) and Tesla. Then I spent two years as a product manager at Microsoft working on AI: I helped ship Formula Repair in Excel, led a small team building a support assistant that engineers used every day, and worked on agents that guide people through a conversation. At Capital One, where I'm a product manager now, I led moving the Venture X card portfolio onto a new platform without customers noticing. What I learned in both places goes into Relay.
 
 ## Research
 

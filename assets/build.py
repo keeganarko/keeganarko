@@ -124,7 +124,7 @@ def journey(t):
         x = 100 + i * 200
         chars = len(name.replace('&amp;', '&'))
         cw = chars * 9.6 + 34
-        last = i == len(STOPS) - 1
+        last = i >= len(STOPS) - 2  # Capital One and Relay are both current
         if last:
             body += f'<rect x="{x - cw / 2 - 5:.1f}" y="40" width="{cw + 10:.1f}" height="44" rx="22" fill="none" stroke="{YELLOW}" stroke-width="3"/>'
         body += (f'<rect x="{x - cw / 2:.1f}" y="45" width="{cw:.1f}" height="34" rx="17" fill="{colour}" stroke="{t["bg"]}" stroke-width="2"/>'
@@ -133,8 +133,8 @@ def journey(t):
                  f'<text x="{x}" y="137" font-size="14" text-anchor="middle" fill="{t["muted"]}">{b}</text>')
         if i:
             body += f'<path d="M{x - 112} 56 l8 6 l-8 6" fill="none" stroke="{t["muted"]}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
-    body += f'<text x="900" y="24" font-size="12" font-weight="600" letter-spacing="1.4" text-anchor="middle" fill="{t["muted"]}">NOW</text>'
-    return svg(w, h, body, 'From Texas A&amp;M to Tesla, Microsoft and Capital One, and now co-founding Relay.')
+    body += f'<text x="800" y="24" font-size="12" font-weight="600" letter-spacing="1.4" text-anchor="middle" fill="{t["muted"]}">NOW</text>'
+    return svg(w, h, body, 'From Texas A&amp;M to Tesla and Microsoft. Now a product manager at Capital One and co-founding Relay.')
 
 
 def tile(colour, glyph, title):
