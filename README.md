@@ -24,7 +24,7 @@ Rebuilds a commit in an empty folder and runs its checks again.
 <img src="assets/icons/compaction-guard.svg" width="24" height="24" align="top" alt=""> **[compaction-guard](https://github.com/keeganarko/compaction-guard)** &nbsp;<img src="assets/chips/compaction-guard-2.svg" height="24" align="top" alt="Safety hook, Claude Code"><br>
 A Claude Code hook that saves and verifies a transcript before it is compacted.
 
-<img src="assets/icons/earlier.svg" width="24" height="24" align="top" alt=""> **[Browser](https://www.keegan.ai/browser/)** and **[Dreamcatcher](https://www.keegan.ai/dreamcatcher/)** &nbsp;<img src="assets/chips/earlier-2.svg" height="24" align="top" alt="Agent browser, Source checking, Earlier work"><br>
-An agent browser that only works in the tabs you pick, and an early tool for checking an AI answer against its sources.
+<img src="assets/icons/browser-mark.svg" width="24" height="24" align="top" alt=""> **[Browser](https://www.keegan.ai/browser/)** &nbsp;<img src="assets/chips/browser-2.svg" height="24" align="top" alt="Agent browser, Earlier work"><br>
+An earlier project: an agent browser that only works in the tabs you pick.
 
 Research: [FoRepBench](https://arxiv.org/abs/2508.11715), a KDD 2025 workshop paper, and a [patent application](https://patents.google.com/patent/US20250378320A1/en) with Microsoft.

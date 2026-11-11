@@ -123,8 +123,9 @@ def tile(colour, glyph, title):
 
 
 W = '#ffffff'
-# Relay and Agent Hub use their own marks, copied as files into icons/ (relay-mark.svg from
-# Relay's website, agent-hub-mark.svg from Agent Hub's brand folder). Never redraw them here.
+# Relay, Agent Hub and Browser use their own marks, copied as files into icons/ (relay-mark.svg
+# from Relay's website, agent-hub-mark.svg from Agent Hub's brand folder, browser-mark.svg from
+# keegan.ai's brand folder). Never redraw them here.
 ICONS = {
     'model-lab': ('#E5A800', f'<g fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round">'
                   '<path d="M14 22 L32 14 L50 22 L32 30 Z"/><path d="M14 32 L32 40 L50 32"/><path d="M14 42 L32 50 L50 42"/></g>'
@@ -222,7 +223,7 @@ CHIPS = {
     'model-lab': [('Interpretability', 'what'), ('Small open models', 'with'), ('Python', 'built'), ('PyTorch', 'built')],
     'receipt-checker': [('Verification', 'what'), ('Node.js', 'built'), ('No dependencies', 'built')],
     'compaction-guard': [('Safety hook', 'what'), ('Claude Code', 'with')],
-    'earlier': [('Agent browser', 'what'), ('Source checking', 'what'), ('Earlier work', 'built')],
+    'browser': [('Agent browser', 'what'), ('Earlier work', 'built')],
 }
 
 

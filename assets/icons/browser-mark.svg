@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <clipPath id="browser-body">
+      <path d="M32 9C25 15 22 23 22 33L15 40V48L24 44H40L49 48V40L42 33C42 23 39 15 32 9Z"/>
+    </clipPath>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#f3f5f6"/>
+  <g clip-path="url(#browser-body)">
+    <path d="M15 9H49V48H15Z" fill="#4285f4"/>
+    <path d="M22 9H42V20H22Z" fill="#ea4335"/>
+    <path d="M22 33L15 40V48L24 44Z" fill="#34a853"/>
+    <path d="M42 33L49 40V48L40 44Z" fill="#ea4335"/>
+  </g>
+  <circle cx="32" cy="27" r="6" fill="#f3f5f6"/>
+  <circle cx="32" cy="27" r="4" fill="#fbbc04"/>
+  <path d="M27 48H37L32 56Z" fill="#fbbc04"/>
+  <path d="M30 48H34L32 52Z" fill="#ea4335"/>
+</svg>
