@@ -51,33 +51,12 @@ def person(x, y, colour):
 
 
 def hero(t):
-    w, h = 1000, 300
+    w, h = 1000, 190
     body = panel(w, h, t)
-    body += (f'<text x="56" y="122" font-size="46" font-weight="700" letter-spacing="-1" fill="{t["text"]}">Keegan Choudhury</text>'
-             f'<text x="58" y="164" font-size="21" font-weight="600" fill="{t["blue"]}">Product manager at Capital One · Arlington, Virginia</text>'
-             f'<text x="58" y="210" font-size="18" fill="{t["muted"]}">I build tools that help people and their AI agents</text>'
-             f'<text x="58" y="236" font-size="18" fill="{t["muted"]}">work on the same thing without stepping on each other.</text>')
-    hub_x, hub_y, ax = 800, 152, 640
-    ys = [64, 108, 152, 196, 240]
-    paths, nodes, moving = '', '', ''
-    for i, y in enumerate(ys):
-        paths += f'<path id="a{i}" d="M{ax} {y} C{ax + 80} {y} {hub_x - 90} {hub_y} {hub_x} {hub_y}" fill="none" stroke="{t["line"]}" stroke-width="2"/>'
-        nodes += f'<rect x="{ax - 12}" y="{y - 12}" width="24" height="24" rx="7" fill="{t["agent"]}"/>'
-        moving += pulse(f'a{i}', t['gold'], 3.6, round(i * 0.72, 2))
-    for i, y in enumerate([108, 196]):
-        paths += f'<path id="p{i}" d="M{hub_x} {hub_y} C{hub_x + 60} {hub_y} {hub_x + 60} {y} {hub_x + 125} {y}" fill="none" stroke="{t["line"]}" stroke-width="2"/>'
-        nodes += person(hub_x + 145, y, t['blue'])
-        moving += pulse(f'p{i}', t['blue'], 2.4, 1.2 + i * 1.2)
-    hub = (f'<circle class="moving" cx="{hub_x}" cy="{hub_y}" r="20" fill="none" stroke="{YELLOW}" stroke-width="3">'
-           '<animate attributeName="r" values="20;34" dur="2.4s" repeatCount="indefinite"/>'
-           '<animate attributeName="opacity" values=".7;0" dur="2.4s" repeatCount="indefinite"/></circle>'
-           f'<circle cx="{hub_x}" cy="{hub_y}" r="20" fill="{YELLOW}"/>'
-           f'<circle cx="{hub_x}" cy="{hub_y}" r="7" fill="{INK}"/>')
-    labels = (f'<text x="{ax}" y="282" font-size="13" text-anchor="middle" fill="{t["muted"]}">agents</text>'
-              f'<text x="{hub_x}" y="282" font-size="13" text-anchor="middle" fill="{t["muted"]}">one shared picture</text>'
-              f'<text x="{hub_x + 145}" y="282" font-size="13" text-anchor="middle" fill="{t["muted"]}">people</text>')
-    return svg(w, h, body + paths + moving + nodes + hub + labels,
-               'Keegan Choudhury, product manager at Capital One, in Arlington, Virginia. Agents feed one shared picture that people stay in charge of.')
+    body += (f'<text x="56" y="92" font-size="46" font-weight="700" letter-spacing="-1" fill="{t["text"]}">Keegan Choudhury</text>'
+             f'<text x="58" y="130" font-size="21" font-weight="600" fill="{t["blue"]}">Product manager at Capital One</text>'
+             f'<text x="58" y="160" font-size="17" fill="{t["muted"]}">Previously on AI products at Microsoft · Arlington, Virginia</text>')
+    return svg(w, h, body, 'Keegan Choudhury, product manager at Capital One, previously on AI products at Microsoft. Arlington, Virginia.')
 
 
 def relay(t):
@@ -143,6 +122,8 @@ def tile(colour, glyph, title):
 
 W = '#ffffff'
 ICONS = {
+    'relay': (BLUE, f'<path d="M13 19 L30 32 M13 45 L30 32 M34 32 H51" fill="none" stroke="{W}" stroke-width="3.5" stroke-linecap="round"/>'
+              f'<circle cx="32" cy="32" r="6.5" fill="{YELLOW}" stroke="{W}" stroke-width="2"/>', 'Relay'),
     'agent-hub': (CORAL, ''.join(f'<line x1="32" y1="32" x2="{x}" y2="{y}" stroke="{W}" stroke-width="3" stroke-linecap="round"/>'
                                  f'<circle cx="{x}" cy="{y}" r="4.5" fill="{W}"/>'
                                  for x, y in ((32, 13), (50, 26), (43, 48), (21, 48), (14, 26)))
@@ -234,6 +215,28 @@ def activity(t):
     return svg(w, h, body, title)
 
 
+# Chips: navy says what a project is, grey what it is built with, blue what it works with.
+CHIP = {'what': NAVY, 'built': '#45454D', 'with': BLUE}
+CHIPS = {
+    'relay': [('Team tool', 'what'), ('Claude Code', 'with'), ('Codex', 'with')],
+    'agent-hub': [('Multi-agent', 'what'), ('TypeScript', 'built'), ('MCP server', 'built')],
+    'model-lab': [('Interpretability', 'what'), ('Python', 'built'), ('PyTorch', 'built')],
+    'receipt-checker': [('Verification', 'what'), ('Node.js', 'built')],
+    'compaction-guard': [('Claude Code hook', 'what')],
+    'earlier': [('Earlier work', 'what')],
+}
+
+
+def chips(items):
+    x, h, parts = 0, 24, []
+    for text, kind in items:
+        w = round(len(text) * 7.3 + 24)
+        parts.append(f'<rect x="{x + .75}" y=".75" width="{w - 1.5}" height="{h - 1.5}" rx="{(h - 1.5) / 2}" fill="{CHIP[kind]}" stroke="#ffffff" stroke-opacity=".28" stroke-width="1.5"/>'
+                     f'<text x="{x + w / 2}" y="16.5" font-size="12.5" font-weight="600" text-anchor="middle" fill="#ffffff">{text}</text>')
+        x += w + 6
+    return svg(x - 6, h, ''.join(parts), ', '.join(text for text, _ in items))
+
+
 def main():
     for name, draw in (('hero', hero), ('activity', activity), ('relay', relay), ('journey', journey)):
         for theme, t in THEMES.items():
@@ -241,6 +244,9 @@ def main():
     (OUT / 'icons').mkdir(exist_ok=True)
     for name, (colour, glyph, title) in ICONS.items():
         (OUT / 'icons' / f'{name}.svg').write_text(tile(colour, glyph, title))
+    (OUT / 'chips').mkdir(exist_ok=True)
+    for name, items in CHIPS.items():
+        (OUT / 'chips' / f'{name}.svg').write_text(chips(items))
 
 
 if __name__ == '__main__':
