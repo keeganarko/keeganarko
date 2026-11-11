@@ -51,12 +51,14 @@ def person(x, y, colour):
 
 
 def hero(t):
-    w, h = 1000, 190
-    body = panel(w, h, t)
-    body += (f'<text x="56" y="92" font-size="46" font-weight="700" letter-spacing="-1" fill="{t["text"]}">Keegan Choudhury</text>'
-             f'<text x="58" y="130" font-size="21" font-weight="600" fill="{t["blue"]}">Product manager at Capital One</text>'
-             f'<text x="58" y="160" font-size="17" fill="{t["muted"]}">Previously on AI products at Microsoft · Arlington, Virginia</text>')
-    return svg(w, h, body, 'Keegan Choudhury, product manager at Capital One, previously on AI products at Microsoft. Arlington, Virginia.')
+    # The look of keegan.ai today: its K mark and the name. No box and no coloured stripe;
+    # those belonged to the old site. The mark is the site's own (assets/favicon.svg there).
+    w, h = 1000, 84
+    tile, k = ('#1C1C1E', '#FFFFFF') if t['bg'] == '#ffffff' else ('#F2F2F2', '#1C1C1E')
+    body = (f'<g transform="translate(2 10)"><rect width="64" height="64" rx="14" fill="{tile}"/>'
+            f'<path d="M22 16v32M41.5 16 22.5 35M30 28 42 48" fill="none" stroke="{k}" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/></g>'
+            f'<text x="86" y="57" font-size="42" font-weight="700" letter-spacing="-1" fill="{t["text"]}">Keegan Choudhury</text>')
+    return svg(w, h, body, 'Keegan Choudhury')
 
 
 def relay(t):
@@ -234,7 +236,7 @@ def chips(items):
 
 
 def main():
-    for name, draw in (('banner', hero), ('activity', activity), ('relay', relay), ('journey', journey)):
+    for name, draw in (('header', hero), ('activity', activity), ('relay', relay), ('journey', journey)):
         for theme, t in THEMES.items():
             (OUT / f'{name}-{theme}.svg').write_text(draw(t))
     (OUT / 'icons').mkdir(exist_ok=True)

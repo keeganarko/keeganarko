@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-  <img src="assets/banner-light.svg" width="100%" alt="Keegan Choudhury, product manager at Capital One, previously on AI products at Microsoft. Arlington, Virginia.">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
+  <img src="assets/header-light.svg" width="100%" alt="Keegan Choudhury">
 </picture>
 
 I'm a product manager at Capital One, and before that I worked on AI products at Microsoft. On the side I build tools for working with coding agents.
