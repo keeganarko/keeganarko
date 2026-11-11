@@ -121,13 +121,9 @@ def tile(colour, glyph, title):
 
 
 W = '#ffffff'
+# Relay and Agent Hub use their own marks, copied as files into icons/ (relay-mark.svg from
+# Relay's website, agent-hub-mark.svg from Agent Hub's brand folder). Never redraw them here.
 ICONS = {
-    'relay': (BLUE, f'<path d="M13 19 L30 32 M13 45 L30 32 M34 32 H51" fill="none" stroke="{W}" stroke-width="3.5" stroke-linecap="round"/>'
-              f'<circle cx="32" cy="32" r="6.5" fill="{YELLOW}" stroke="{W}" stroke-width="2"/>', 'Relay'),
-    'agent-hub': (CORAL, ''.join(f'<line x1="32" y1="32" x2="{x}" y2="{y}" stroke="{W}" stroke-width="3" stroke-linecap="round"/>'
-                                 f'<circle cx="{x}" cy="{y}" r="4.5" fill="{W}"/>'
-                                 for x, y in ((32, 13), (50, 26), (43, 48), (21, 48), (14, 26)))
-                  + f'<circle cx="32" cy="32" r="6.5" fill="{YELLOW}" stroke="{W}" stroke-width="2"/>', 'Agent Hub'),
     'model-lab': ('#E5A800', f'<g fill="none" stroke="{INK}" stroke-width="3" stroke-linejoin="round">'
                   '<path d="M14 22 L32 14 L50 22 L32 30 Z"/><path d="M14 32 L32 40 L50 32"/><path d="M14 42 L32 50 L50 42"/></g>'
                   f'<circle cx="44" cy="45" r="7.5" fill="#E5A800" stroke="{INK}" stroke-width="3"/>'
@@ -238,7 +234,7 @@ def chips(items):
 
 
 def main():
-    for name, draw in (('hero', hero), ('activity', activity), ('relay', relay), ('journey', journey)):
+    for name, draw in (('banner', hero), ('activity', activity), ('relay', relay), ('journey', journey)):
         for theme, t in THEMES.items():
             (OUT / f'{name}-{theme}.svg').write_text(draw(t))
     (OUT / 'icons').mkdir(exist_ok=True)

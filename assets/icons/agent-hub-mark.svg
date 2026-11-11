@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <!-- Agent Hub: one hub with the five AIs around it, each in its own colour
+       (Claude, Codex, Antigravity, Muse, Grok; house tokens from
+       ~/Dev/roots/artifacts/style/template.html). Bold shapes only, so it
+       still reads at 16 px on a dark or light taskbar. -->
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22305a"/>
+      <stop offset="1" stop-color="#0a0f1d"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#5b8cff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.5"/>
+      <stop offset="0.55" stop-color="#3b82f6" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" rx="58" fill="url(#tile)"/>
+  <circle cx="128" cy="132" r="110" fill="url(#glow)"/>
+  <g stroke="#8ab8ff" stroke-width="16" stroke-linecap="round">
+    <line x1="128" y1="132" x2="128" y2="48"/>
+    <line x1="128" y1="132" x2="207.9" y2="106"/>
+    <line x1="128" y1="132" x2="177.4" y2="200"/>
+    <line x1="128" y1="132" x2="78.6" y2="200"/>
+    <line x1="128" y1="132" x2="48.1" y2="106"/>
+  </g>
+  <circle cx="128" cy="48" r="27" fill="#e07a52"/>
+  <circle cx="207.9" cy="106" r="27" fill="#12b088"/>
+  <circle cx="177.4" cy="200" r="27" fill="#4a8cff"/>
+  <circle cx="78.6" cy="200" r="27" fill="#8b6dff"/>
+  <circle cx="48.1" cy="106" r="27" fill="#eef0f4"/>
+  <circle cx="128" cy="132" r="46" fill="url(#core)"/>
+  <circle cx="128" cy="132" r="17" fill="#ffffff"/>
+</svg>
