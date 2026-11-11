@@ -3,71 +3,17 @@
   <img src="assets/hero-light.svg" width="100%" alt="Keegan Choudhury, product manager at Capital One, in Arlington, Virginia. I build tools that help people and their AI agents work on the same thing without stepping on each other.">
 </picture>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg">
-  <img src="assets/activity-light.svg" width="100%" alt="What I've been building: 6,619 commits since May 2026, about half naming an AI agent as co-author, rising sharply from September. Dots mark when keegan.ai, Dreamcatcher, Browser, Relay, Model Lab, compaction-guard, receipt-checker and Agent Hub started.">
-</picture>
+I'm a product manager at Capital One, and before that I worked on AI products at Microsoft. On the side I build tools for working with coding agents.
 
-## Hi, I'm Keegan
+[keegan.ai](https://www.keegan.ai) · [LinkedIn](https://www.linkedin.com/in/keeganarko) · [Résumé](https://www.keegan.ai/assets/Keegan-Choudhury-Resume.pdf)
 
-I'm a product manager at Capital One, and before that I worked on AI products at Microsoft.
+## Things I've built
 
-On the side I build tools for working with coding agents. I wrote about what I learned in [Agents need direction](https://www.keegan.ai/writing/agents-need-direction.html).
+- **[Relay](https://www.relayaiworld.com)**, a project I'm co-building. It warns two people when their agents are about to change the same code.
+- **[Agent Hub](https://www.keegan.ai/workspace/)**, where five coding agents work on one project. A change only counts as done once its checks pass again from a clean copy.
+- **[Model Lab](https://github.com/keeganarko/model-lab)**, how I look inside small open models on my own GPU.
+- **[receipt-checker](https://github.com/keeganarko/receipt-checker)**, which rebuilds a commit in an empty folder and runs its checks again.
+- **[compaction-guard](https://github.com/keeganarko/compaction-guard)**, a Claude Code hook that saves and verifies a transcript before it is compacted.
+- **[Browser](https://www.keegan.ai/browser/)** and **[Dreamcatcher](https://www.keegan.ai/dreamcatcher/)**, two earlier experiments.
 
-What I'm learning right now: how to look inside small open models, and how to make agents prove their work instead of just claiming it.
-
-[keegan.ai](https://www.keegan.ai) · [Relay](https://www.relayaiworld.com) · [LinkedIn](https://www.linkedin.com/in/keeganarko) · [Résumé](https://www.keegan.ai/assets/Keegan-Choudhury-Resume.pdf)
-
-## Things I've built along the way
-
-### Relay
-
-<a href="https://www.relayaiworld.com/demo.html">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/relay-dark.svg">
-    <img src="assets/relay-light.svg" width="100%" alt="Relay keeps software teams and their AI agents in sync. When two agents head for the same code, Relay warns both people before the merge. Watch the 30-second film.">
-  </picture>
-</a>
-
-A project I'm co-building. Relay sits beside the tools teams already use, like Claude Code and Codex. It notices when two people's agents are about to collide, checks changes before they land, and only shares context with people who are cleared to see all of it.
-
-### <img src="assets/icons/agent-hub.svg" width="30" height="30" align="top" alt=""> Agent Hub
-
-My home base. Five coding agents work on one project, share notes and tools, and hand work to each other. A change only counts as done once its checks pass again from a clean copy, and if I'm in the middle of typing, the agents wait. My draft always wins. Written in TypeScript on Node, with a shared MCP server every agent plugs into. [See how it works](https://www.keegan.ai/workspace/)
-
-### <img src="assets/icons/model-lab.svg" width="30" height="30" align="top" alt=""> Model Lab
-
-How I look inside small open models on my own GPU. It reads a model one layer at a time with lenses and sparse autoencoders, and can nudge a layer while the model is thinking to test cause and effect against random controls. It streams the big feature dictionaries in small slices, so a 9B model fits on an ordinary graphics card. I kept the negative results in too. Python and PyTorch, on Qwen models. [Read the code](https://github.com/keeganarko/model-lab)
-
-### <img src="assets/icons/receipt-checker.svg" width="30" height="30" align="top" alt=""> receipt-checker
-
-Agents kept telling me tests passed when they hadn't. This tool ignores the claim. It rebuilds the exact commit in an empty folder, runs the checks again, and writes down what really happened in a log that shows any later edits. Plain Node.js, nothing else to install. [Read the code](https://github.com/keeganarko/receipt-checker)
-
-### <img src="assets/icons/compaction-guard.svg" width="30" height="30" align="top" alt=""> compaction-guard
-
-A small Claude Code hook. Before a long conversation gets compacted, it saves the whole transcript, checks the copy matches, and stops the compaction if it doesn't, so nothing important quietly disappears. [Read the code](https://github.com/keeganarko/compaction-guard)
-
-### <img src="assets/icons/earlier.svg" width="30" height="30" align="top" alt=""> Earlier experiments
-
-- [**Browser**](https://www.keegan.ai/browser/), a browser built for agents where they only touch the tabs you hand them, and anything involving money, deleting things or passwords waits for your OK.
-- [**Dreamcatcher**](https://www.keegan.ai/dreamcatcher/), an early try at arguing with an AI answer. Every claim links back to its source, and scores wait while an objection is still open.
-- **An options replay harness** that keeps me honest about cause and effect. It replays real option quotes without peeking at the future.
-
-## Where I've been
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/journey-dark.svg">
-  <img src="assets/journey-light.svg" width="100%" alt="From Texas A&M to Tesla and Microsoft. Now a product manager at Capital One.">
-</picture>
-
-I studied computer science at Texas A&M and interned at AT&T, Microsoft (on HoloLens) and Tesla. Then I spent two years as a product manager at Microsoft working on AI: I helped ship Formula Repair in Excel, led a small team building a support assistant that engineers used every day, and worked on agents that guide people through a conversation. At Capital One, where I'm a product manager now, I led moving the Venture X card portfolio onto a new platform without customers noticing. What I learned in both places goes into Relay.
-
-## Research
-
-**[FoRepBench](https://arxiv.org/abs/2508.11715)**, KDD 2025 workshop. With my Microsoft colleagues I built a benchmark for how well language models repair broken Excel formulas, scoring each fix by actually running it. The lesson that stuck with me: models that look great on generated test cases do about half as well on the messy problems real people post in forums.
-
-**[Generative agent guided conversations for artifact completion](https://patents.google.com/patent/US20250378320A1/en)**, a US patent application with Microsoft, where I'm one of the inventors. An agent interviews you to fill in a document, while plain code checks every field before anything is saved.
-
-## Say hi
-
-The best way to reach me is through [keegan.ai](https://www.keegan.ai) or [LinkedIn](https://www.linkedin.com/in/keeganarko).
+Research: [FoRepBench](https://arxiv.org/abs/2508.11715), a KDD 2025 workshop paper, and a [patent application](https://patents.google.com/patent/US20250378320A1/en) with Microsoft.
