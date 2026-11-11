@@ -136,6 +136,9 @@ ICONS = {
     'compaction-guard': (NAVY, f'<path d="M32 11 L49 17 V31 C49 42 41.5 49 32 53 C22.5 49 15 42 15 31 V17 Z" fill="none" stroke="{W}" stroke-width="3" stroke-linejoin="round"/>'
                          f'<path d="M24 23 H40 M24 30 H40 M24 37 H34" stroke="{W}" stroke-width="3" stroke-linecap="round"/>'
                          f'<circle cx="41" cy="41" r="7" fill="{YELLOW}"/><path d="M37.5 41 L40 43.5 L44.5 38.5" fill="none" stroke="{INK}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>', 'compaction-guard'),
+    'chess-bot': ('#45454D', f'<circle cx="32" cy="20" r="7.5" fill="{W}"/>'
+                  f'<path d="M27 28 H37 C37 36 40 40 42 45 H22 C24 40 27 36 27 28 Z" fill="{W}"/>'
+                  f'<rect x="19" y="46" width="26" height="6" rx="2.5" fill="{W}"/>', 'Chess bot'),
     'earlier': ('#45454D', f'<rect x="12" y="16" width="40" height="32" rx="5" fill="none" stroke="{W}" stroke-width="3"/>'
                 f'<line x1="12" y1="25" x2="52" y2="25" stroke="{W}" stroke-width="3"/><circle cx="18" cy="20.5" r="1.8" fill="{W}"/>'
                 f'<path d="M22 39 L28 33 L33 37 L41 30" fill="none" stroke="{YELLOW}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>', 'Earlier experiments'),
@@ -215,7 +218,7 @@ def activity(t):
 
 
 # Chips: navy says what a project is, grey what it is built with, blue what it works with.
-CHIP = {'what': NAVY, 'built': '#45454D', 'with': BLUE}
+CHIP = {'what': NAVY, 'built': '#45454D', 'with': BLUE, 'state': '#A8590A'}  # amber: not finished
 CHIPS = {
     # Relay connects to any AI app with MCP settings (its own connect page); never name only two.
     'relay': [('For teams', 'what'), ('Any coding agent', 'with'), ('MCP', 'built')],
@@ -223,6 +226,7 @@ CHIPS = {
     'model-lab': [('Interpretability', 'what'), ('Small open models', 'with'), ('Python', 'built'), ('PyTorch', 'built')],
     'receipt-checker': [('Verification', 'what'), ('Node.js', 'built'), ('No dependencies', 'built')],
     'compaction-guard': [('Safety hook', 'what'), ('Claude Code', 'with')],
+    'chess-bot': [('In progress', 'state'), ('Chess transformer', 'what'), ('PyTorch', 'built')],
     'browser': [('Agent browser', 'what'), ('Earlier work', 'built')],
 }
 

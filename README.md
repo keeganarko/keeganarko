@@ -24,6 +24,9 @@ Rebuilds a commit in an empty folder and runs its checks again.
 <img src="assets/icons/compaction-guard.svg" width="24" height="24" align="top" alt=""> **[compaction-guard](https://github.com/keeganarko/compaction-guard)** &nbsp;<img src="assets/chips/compaction-guard-2.svg" height="24" align="top" alt="Safety hook, Claude Code"><br>
 A Claude Code hook that saves and verifies a transcript before it is compacted.
 
+<img src="assets/icons/chess-bot.svg" width="24" height="24" align="top" alt=""> **Chess bot** &nbsp;<img src="assets/chips/chess-bot-2.svg" height="24" align="top" alt="In progress, Chess transformer, PyTorch"><br>
+A small transformer learning chess from move text, with no search. It doesn't beat Stockfish yet.
+
 <img src="assets/icons/browser-mark.svg" width="24" height="24" align="top" alt=""> **[Browser](https://www.keegan.ai/browser/)** &nbsp;<img src="assets/chips/browser-2.svg" height="24" align="top" alt="Agent browser, Earlier work"><br>
 An earlier project: an agent browser that only works in the tabs you pick.
 
