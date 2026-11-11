@@ -216,12 +216,13 @@ def activity(t):
 # Chips: navy says what a project is, grey what it is built with, blue what it works with.
 CHIP = {'what': NAVY, 'built': '#45454D', 'with': BLUE}
 CHIPS = {
-    'relay': [('Team tool', 'what'), ('Claude Code', 'with'), ('Codex', 'with')],
-    'agent-hub': [('Multi-agent', 'what'), ('TypeScript', 'built'), ('MCP server', 'built')],
-    'model-lab': [('Interpretability', 'what'), ('Python', 'built'), ('PyTorch', 'built')],
-    'receipt-checker': [('Verification', 'what'), ('Node.js', 'built')],
-    'compaction-guard': [('Claude Code hook', 'what')],
-    'earlier': [('Earlier work', 'what')],
+    # Relay connects to any AI app with MCP settings (its own connect page); never name only two.
+    'relay': [('For teams', 'what'), ('Any coding agent', 'with'), ('MCP', 'built')],
+    'agent-hub': [('Multi-agent', 'what'), ('5 coding agents', 'with'), ('TypeScript', 'built'), ('MCP server', 'built')],
+    'model-lab': [('Interpretability', 'what'), ('Small open models', 'with'), ('Python', 'built'), ('PyTorch', 'built')],
+    'receipt-checker': [('Verification', 'what'), ('Node.js', 'built'), ('No dependencies', 'built')],
+    'compaction-guard': [('Safety hook', 'what'), ('Claude Code', 'with')],
+    'earlier': [('Agent browser', 'what'), ('Source checking', 'what'), ('Earlier work', 'built')],
 }
 
 
@@ -244,7 +245,7 @@ def main():
         (OUT / 'icons' / f'{name}.svg').write_text(tile(colour, glyph, title))
     (OUT / 'chips').mkdir(exist_ok=True)
     for name, items in CHIPS.items():
-        (OUT / 'chips' / f'{name}.svg').write_text(chips(items))
+        (OUT / 'chips' / f'{name}-2.svg').write_text(chips(items))  # the number changes the address, so GitHub's cache lets go
 
 
 if __name__ == '__main__':
