@@ -54,7 +54,7 @@ def hero(t):
     w, h = 1000, 300
     body = panel(w, h, t)
     body += (f'<text x="56" y="122" font-size="46" font-weight="700" letter-spacing="-1" fill="{t["text"]}">Keegan Choudhury</text>'
-             f'<text x="58" y="164" font-size="21" font-weight="600" fill="{t["blue"]}">Co-founder of Relay · Arlington, Virginia</text>'
+             f'<text x="58" y="164" font-size="21" font-weight="600" fill="{t["blue"]}">Product manager at Capital One · Arlington, Virginia</text>'
              f'<text x="58" y="210" font-size="18" fill="{t["muted"]}">I build tools that help people and their AI agents</text>'
              f'<text x="58" y="236" font-size="18" fill="{t["muted"]}">work on the same thing without stepping on each other.</text>')
     hub_x, hub_y, ax = 800, 152, 640
@@ -77,7 +77,7 @@ def hero(t):
               f'<text x="{hub_x}" y="282" font-size="13" text-anchor="middle" fill="{t["muted"]}">one shared picture</text>'
               f'<text x="{hub_x + 145}" y="282" font-size="13" text-anchor="middle" fill="{t["muted"]}">people</text>')
     return svg(w, h, body + paths + moving + nodes + hub + labels,
-               'Keegan Choudhury, co-founder of Relay in Arlington, Virginia. Agents feed one shared picture that people stay in charge of.')
+               'Keegan Choudhury, product manager at Capital One, in Arlington, Virginia. Agents feed one shared picture that people stay in charge of.')
 
 
 def relay(t):
@@ -113,7 +113,6 @@ STOPS = [
     ('Tesla', '#C8102E', 'Automated part checks', 'on the assembly line'),
     ('Microsoft', '#0067B8', 'AI products, a paper', 'and a patent'),
     ('Capital One', '#004977', 'Moved a card portfolio', 'with no customer outages'),
-    ('Relay', BLUE, 'Co-founder,', 'building it now'),
 ]
 
 
@@ -121,10 +120,10 @@ def journey(t):
     w, h = 1000, 170
     body = f'<line x1="100" y1="62" x2="900" y2="62" stroke="{t["line"]}" stroke-width="2.5"/>'
     for i, (name, colour, a, b) in enumerate(STOPS):
-        x = 100 + i * 200
+        x = 100 + i * 800 / (len(STOPS) - 1)
         chars = len(name.replace('&amp;', '&'))
         cw = chars * 9.6 + 34
-        last = i >= len(STOPS) - 2  # Capital One and Relay are both current
+        last = i == len(STOPS) - 1  # Capital One is the current stop
         if last:
             body += f'<rect x="{x - cw / 2 - 5:.1f}" y="40" width="{cw + 10:.1f}" height="44" rx="22" fill="none" stroke="{YELLOW}" stroke-width="3"/>'
         body += (f'<rect x="{x - cw / 2:.1f}" y="45" width="{cw:.1f}" height="34" rx="17" fill="{colour}" stroke="{t["bg"]}" stroke-width="2"/>'
@@ -132,9 +131,9 @@ def journey(t):
                  f'<text x="{x}" y="116" font-size="14" text-anchor="middle" fill="{t["text"]}">{a}</text>'
                  f'<text x="{x}" y="137" font-size="14" text-anchor="middle" fill="{t["muted"]}">{b}</text>')
         if i:
-            body += f'<path d="M{x - 112} 56 l8 6 l-8 6" fill="none" stroke="{t["muted"]}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
-    body += f'<text x="800" y="24" font-size="12" font-weight="600" letter-spacing="1.4" text-anchor="middle" fill="{t["muted"]}">NOW</text>'
-    return svg(w, h, body, 'From Texas A&amp;M to Tesla and Microsoft. Now a product manager at Capital One and co-founding Relay.')
+            body += f'<path d="M{x - 112:.1f} 56 l8 6 l-8 6" fill="none" stroke="{t["muted"]}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
+    body += f'<text x="900" y="24" font-size="12" font-weight="600" letter-spacing="1.4" text-anchor="middle" fill="{t["muted"]}">NOW</text>'
+    return svg(w, h, body, 'From Texas A&amp;M to Tesla and Microsoft. Now a product manager at Capital One.')
 
 
 def tile(colour, glyph, title):

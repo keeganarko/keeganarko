@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-  <img src="assets/hero-light.svg" width="100%" alt="Keegan Choudhury, co-founder of Relay in Arlington, Virginia. I build tools that help people and their AI agents work on the same thing without stepping on each other.">
+  <img src="assets/hero-light.svg" width="100%" alt="Keegan Choudhury, product manager at Capital One, in Arlington, Virginia. I build tools that help people and their AI agents work on the same thing without stepping on each other.">
 </picture>
 
 <picture>
@@ -8,24 +8,19 @@
   <img src="assets/activity-light.svg" width="100%" alt="What I've been building: 6,619 commits since May 2026, about half naming an AI agent as co-author, rising sharply from September. Dots mark when keegan.ai, Dreamcatcher, Browser, Relay, Model Lab, compaction-guard, receipt-checker and Agent Hub started.">
 </picture>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/contributions-dark.svg">
-  <img src="assets/contributions-light.svg" width="100%" alt="GitHub contribution graph for the last year: 9,939 contributions, most days active.">
-</picture>
-
 ## Hi, I'm Keegan
 
-I'm co-founding [Relay](https://www.relayaiworld.com) from Arlington, Virginia. Relay keeps software teams and their AI coding agents in sync. When your agent and a teammate's agent start changing the same code, it tells you both before anything merges.
+I'm a product manager at Capital One, and before that I worked on AI products at Microsoft.
 
-It started as my own problem. I work with five coding agents every day (Claude, Codex, Gemini, Grok and Muse), and getting them to write code was never the hard part. The hard part was keeping them pointed at the same goal, stopping them from writing over each other and over me, and knowing when "done" really meant done. I kept building tools to fix that, and Relay is where they all led. I wrote about what I learned in [Agents need direction](https://www.keegan.ai/writing/agents-need-direction.html).
-
-I'm also a product manager at Capital One, and before that I worked on AI products at Microsoft.
+On the side I build tools for working with coding agents. I wrote about what I learned in [Agents need direction](https://www.keegan.ai/writing/agents-need-direction.html).
 
 What I'm learning right now: how to look inside small open models, and how to make agents prove their work instead of just claiming it.
 
 [keegan.ai](https://www.keegan.ai) · [Relay](https://www.relayaiworld.com) · [LinkedIn](https://www.linkedin.com/in/keeganarko) · [Résumé](https://www.keegan.ai/assets/Keegan-Choudhury-Resume.pdf)
 
-<br>
+## Things I've built along the way
+
+### Relay
 
 <a href="https://www.relayaiworld.com/demo.html">
   <picture>
@@ -33,11 +28,8 @@ What I'm learning right now: how to look inside small open models, and how to ma
     <img src="assets/relay-light.svg" width="100%" alt="Relay keeps software teams and their AI agents in sync. When two agents head for the same code, Relay warns both people before the merge. Watch the 30-second film.">
   </picture>
 </a>
-<br><br>
 
-Relay sits beside the tools teams already use, like Claude Code and Codex. It notices when two people's agents are about to collide, checks changes before they land, and only shares context with people who are cleared to see all of it.
-
-## Things I've built along the way
+A project I'm co-building. Relay sits beside the tools teams already use, like Claude Code and Codex. It notices when two people's agents are about to collide, checks changes before they land, and only shares context with people who are cleared to see all of it.
 
 ### <img src="assets/icons/agent-hub.svg" width="30" height="30" align="top" alt=""> Agent Hub
 
@@ -65,7 +57,7 @@ A small Claude Code hook. Before a long conversation gets compacted, it saves th
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/journey-dark.svg">
-  <img src="assets/journey-light.svg" width="100%" alt="From Texas A&M to Tesla and Microsoft. Now a product manager at Capital One and co-founding Relay.">
+  <img src="assets/journey-light.svg" width="100%" alt="From Texas A&M to Tesla and Microsoft. Now a product manager at Capital One.">
 </picture>
 
 I studied computer science at Texas A&M and interned at AT&T, Microsoft (on HoloLens) and Tesla. Then I spent two years as a product manager at Microsoft working on AI: I helped ship Formula Repair in Excel, led a small team building a support assistant that engineers used every day, and worked on agents that guide people through a conversation. At Capital One, where I'm a product manager now, I led moving the Venture X card portfolio onto a new platform without customers noticing. What I learned in both places goes into Relay.
@@ -78,4 +70,4 @@ I studied computer science at Texas A&M and interned at AT&T, Microsoft (on Holo
 
 ## Say hi
 
-If your team runs coding agents and they keep colliding, I'd love to hear about it. The best way to reach me is through [keegan.ai](https://www.keegan.ai) or [LinkedIn](https://www.linkedin.com/in/keeganarko).
+The best way to reach me is through [keegan.ai](https://www.keegan.ai) or [LinkedIn](https://www.linkedin.com/in/keeganarko).
